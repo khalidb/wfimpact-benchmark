@@ -1,0 +1,2 @@
+# R13: stricter quality trimming (analysis setting)
+extra_trimgalore_args: "--quality 30"

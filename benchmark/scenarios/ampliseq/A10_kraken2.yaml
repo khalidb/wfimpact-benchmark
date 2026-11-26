@@ -1,0 +1,3 @@
+# A10: Kraken2 with Greengenes instead of DADA2 for taxonomy (tool substitution)
+skip_dada_taxonomy: true
+kraken2_ref_taxonomy: "greengenes"

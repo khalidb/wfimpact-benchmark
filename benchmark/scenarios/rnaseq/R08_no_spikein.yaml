@@ -1,0 +1,2 @@
+# R8: Remove the GFP spike-in from the reference (the test profile adds it)
+additional_fasta: null

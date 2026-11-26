@@ -1,0 +1,17 @@
+{
+  "changed_parameters": [{"name": "diversity_rarefaction_depth", "value": "1000"}],
+  "added": [],
+  "removed": [],
+  "affected": [
+    "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_CORE",
+    "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_ALPHA",
+    "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_BETA",
+    "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_BETAORD",
+    "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_ADONIS",
+    "NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT",
+    "NFCORE_AMPLISEQ:AMPLISEQ:MULTIQC"
+  ],
+  "feasible": true,
+  "problems": "",
+  "rationale": "QIIME2_DIVERSITY_CORE takes diversity_rarefaction_depth as a value input and uses max(minimum sample depth, parameter) as --p-sampling-depth, so raising the test profile's 500 to 1000 changes its command and its outputs. Those outputs feed the alpha, beta, ordination and adonis steps, and SUMMARY_REPORT, which also takes the depth file. MULTIQC changes because its workflow summary now lists a parameter that differs from the default. QIIME2_TREE and QIIME2_ALPHARAREFACTION do not take this parameter and stay unchanged. Samples with fewer than 1000 reads would be dropped from rarefied analyses, which could cause group-based tests to fail if a group ends up with too few samples."
+}

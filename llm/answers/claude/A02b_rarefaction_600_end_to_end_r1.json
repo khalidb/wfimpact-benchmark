@@ -1,0 +1,17 @@
+{
+  "changed_parameters": [{"name": "diversity_rarefaction_depth", "value": "600"}],
+  "added": [],
+  "removed": [],
+  "affected": [
+    "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_CORE",
+    "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_ALPHA",
+    "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_BETA",
+    "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_BETAORD",
+    "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_ADONIS",
+    "NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT",
+    "NFCORE_AMPLISEQ:AMPLISEQ:MULTIQC"
+  ],
+  "feasible": true,
+  "problems": "",
+  "rationale": "The parameter --diversity_rarefaction_depth only reaches QIIME2_DIVERSITY_CORE. That process raises the sampling depth to this floor when the shallowest sample falls below it, and qiime core-metrics then drops the samples under the depth. Its distance matrices, vectors, PCoA results and depth report feed the alpha, beta, ordination and adonis steps and SUMMARY_REPORT, so all of these re-run. The parameter summary sent to MultiQC also changes, so MULTIQC re-runs too."
+}

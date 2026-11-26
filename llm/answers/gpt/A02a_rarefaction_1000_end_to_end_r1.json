@@ -1,0 +1,22 @@
+{
+  "changed_parameters": [
+    {
+      "name": "diversity_rarefaction_depth",
+      "value": "1000"
+    }
+  ],
+  "added": [],
+  "removed": [],
+  "affected": [
+    "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_CORE",
+    "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_ALPHA",
+    "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_BETA",
+    "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_BETAORD",
+    "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_DIVERSITY:QIIME2_DIVERSITY_ADONIS",
+    "NFCORE_AMPLISEQ:AMPLISEQ:MULTIQC",
+    "NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"
+  ],
+  "feasible": true,
+  "problems": "",
+  "rationale": "Increasing diversity_rarefaction_depth from 500 to 1000 changes the minimum sampling depth supplied to QIIME2_DIVERSITY_CORE, propagating through its diversity vectors, distance matrices and PCoA results to the downstream diversity analyses and summary report. MULTIQC is also affected because it receives the updated workflow parameter summary, whereas QIIME2_ALPHARAREFACTION independently determines its depth from the unchanged abundance statistics. No process activation conditions change, although successful execution assumes that sufficient samples retain at least 1000 reads after filtering, which cannot be verified from the source code alone."
+}

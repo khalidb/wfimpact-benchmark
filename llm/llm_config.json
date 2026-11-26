@@ -1,0 +1,15 @@
+{
+  "repetitions": 3,
+  "tasks": ["end_to_end"],
+  "pause_seconds": 2,
+  "pipelines": [
+    {"name": "rnaseq",   "pack": "pack_rnaseq",   "bundle": "pack_rnaseq/code_bundle.txt"},
+    {"name": "ampliseq", "pack": "pack_ampliseq", "bundle": "pack_ampliseq/code_bundle.txt"}
+  ],
+  "models": [
+    {"label": "chatgpt",  "provider": "openai",    "model": "SET-OPENAI-MODEL",   "key_env": "OPENAI_API_KEY",    "temperature": null},
+    {"label": "claude",   "provider": "anthropic", "model": "claude-opus-5-5",    "key_env": "ANTHROPIC_API_KEY", "temperature": null},
+    {"label": "deepseek", "provider": "local",     "model": "SET-DEEPSEEK-MODEL", "key_env": "DEEPSEEK_API_KEY",  "temperature": null,
+     "base_url": "https://api.deepseek.com/v1"}
+  ]
+}

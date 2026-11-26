@@ -1,0 +1,12 @@
+{
+  "changed_parameters": [{"name": "picrust", "value": "true"}],
+  "added": ["NFCORE_AMPLISEQ:AMPLISEQ:PICRUST"],
+  "removed": [],
+  "affected": [
+    "NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT",
+    "NFCORE_AMPLISEQ:AMPLISEQ:MULTIQC"
+  ],
+  "feasible": true,
+  "problems": "",
+  "rationale": "Estimating the metabolic functions of the communities is done in this release by setting `--picrust true`, which adds the PICRUST process. In the baseline, QIIME2 runs, abundance tables are not skipped and a DADA2 reference taxonomy is set, so PICRUST takes the filtered QIIME2_EXPORT sequences and abundance table, and no upstream step changes. SUMMARY_REPORT reruns because it now also receives the PICRUSt2 pathway tables. MULTIQC reruns because the collated software versions now include PICRUST and the workflow summary now lists the changed parameter."
+}

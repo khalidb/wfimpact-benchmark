@@ -1,0 +1,27 @@
+{
+  "changed_parameters": [
+    {"name": "ancombc", "value": "false"},
+    {"name": "ancombc_formula", "value": "null"},
+    {"name": "ancombc2", "value": "false"},
+    {"name": "ancombc2_formula", "value": "null"}
+  ],
+  "added": [],
+  "removed": [
+    "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:QIIME2_FILTERSAMPLES_ANCOM",
+    "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:QIIME2_ANCOMBC_ASV",
+    "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:QIIME2_ANCOMBC_TAX",
+    "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:ANCOMBC_FORMULA_ASV",
+    "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:ANCOMBC_FORMULA_TAX",
+    "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:QIIME2_ANCOMBC2_ASV",
+    "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:QIIME2_ANCOMBC2_TAX",
+    "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:ANCOMBC2_FORMULA_ASV",
+    "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:ANCOMBC2_FORMULA_TAX"
+  ],
+  "affected": [
+    "NFCORE_AMPLISEQ:AMPLISEQ:MULTIQC",
+    "NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"
+  ],
+  "feasible": true,
+  "problems": "",
+  "rationale": "The test profile turns on ancombc, ancombc_formula, ancombc2 and ancombc2_formula. Turning them all off (ancom is already off by default) means the QIIME2_ANCOM subworkflow is never called, so all nine of its processes are removed. METADATA_ALL still runs because diversity indices are not skipped. MULTIQC must rerun because its parameter summary and collated software versions change, and SUMMARY_REPORT must rerun because its ANCOM-BC inputs become empty and it consumes the MultiQC plots."
+}

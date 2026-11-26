@@ -1,0 +1,14 @@
+{
+  "changed_parameters": [
+    {
+      "name": "skip_dada_quality",
+      "value": true
+    }
+  ],
+  "added": [],
+  "removed": [],
+  "affected": [],
+  "feasible": false,
+  "problems": "The pipeline explicitly rejects --skip_dada_quality unless both --trunclenf and --trunclenr are specified. Neither parameter is specified in the baseline test profile, and the researcher has not provided explicit truncation lengths.",
+  "rationale": "The baseline relies on DADA2_QUALITY1 and TRUNCLEN to determine read truncation lengths automatically. Skipping DADA2 quality profiling eliminates the information required for automatic truncation, so explicit forward and reverse truncation lengths must also be supplied. The requested configuration fails during parameter validation, preventing execution and meaningful classification of process changes."
+}

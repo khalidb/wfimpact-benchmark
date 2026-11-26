@@ -1,0 +1,2 @@
+# R10: Use Kallisto instead of Salmon for pseudo-alignment
+pseudo_aligner: kallisto

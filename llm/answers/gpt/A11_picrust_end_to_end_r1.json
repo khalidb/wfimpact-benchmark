@@ -1,0 +1,19 @@
+{
+  "changed_parameters": [
+    {
+      "name": "picrust",
+      "value": "true"
+    }
+  ],
+  "added": [
+    "NFCORE_AMPLISEQ:AMPLISEQ:PICRUST"
+  ],
+  "removed": [],
+  "affected": [
+    "NFCORE_AMPLISEQ:AMPLISEQ:MULTIQC",
+    "NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"
+  ],
+  "feasible": true,
+  "problems": "",
+  "rationale": "Enabling picrust activates PICRUSt2 functional profiling using the filtered ASV sequences and abundance table already produced by QIIME2_EXPORT under the baseline configuration. MULTIQC is affected because its inputs include the updated workflow parameter summary and the software versions emitted by PICRUST, while SUMMARY_REPORT receives the newly generated functional pathway prediction files. No existing analytical processes are removed or require changes to their inputs or settings."
+}

@@ -1,0 +1,28 @@
+{
+  "changed_parameters": [
+    {
+      "name": "salmon_quant_libtype",
+      "value": "A"
+    }
+  ],
+  "added": [],
+  "removed": [],
+  "affected": [
+    "NFCORE_RNASEQ:RNASEQ:QUANTIFY_BAM_SALMON:SALMON_QUANT",
+    "NFCORE_RNASEQ:RNASEQ:QUANTIFY_BAM_SALMON:QUANT_TXIMPORT_SUMMARIZEDEXPERIMENT:CUSTOM_TX2GENE",
+    "NFCORE_RNASEQ:RNASEQ:QUANTIFY_BAM_SALMON:QUANT_TXIMPORT_SUMMARIZEDEXPERIMENT:TXIMETA_TXIMPORT",
+    "NFCORE_RNASEQ:RNASEQ:QUANTIFY_BAM_SALMON:QUANT_TXIMPORT_SUMMARIZEDEXPERIMENT:SE_GENE_UNIFIED",
+    "NFCORE_RNASEQ:RNASEQ:QUANTIFY_BAM_SALMON:QUANT_TXIMPORT_SUMMARIZEDEXPERIMENT:SE_TRANSCRIPT_UNIFIED",
+    "NFCORE_RNASEQ:RNASEQ:QUANTIFY_PSEUDO_ALIGNMENT:SALMON_QUANT",
+    "NFCORE_RNASEQ:RNASEQ:QUANTIFY_PSEUDO_ALIGNMENT:QUANT_TXIMPORT_SUMMARIZEDEXPERIMENT:CUSTOM_TX2GENE",
+    "NFCORE_RNASEQ:RNASEQ:QUANTIFY_PSEUDO_ALIGNMENT:QUANT_TXIMPORT_SUMMARIZEDEXPERIMENT:TXIMETA_TXIMPORT",
+    "NFCORE_RNASEQ:RNASEQ:QUANTIFY_PSEUDO_ALIGNMENT:QUANT_TXIMPORT_SUMMARIZEDEXPERIMENT:SE_GENE_UNIFIED",
+    "NFCORE_RNASEQ:RNASEQ:QUANTIFY_PSEUDO_ALIGNMENT:QUANT_TXIMPORT_SUMMARIZEDEXPERIMENT:SE_TRANSCRIPT_UNIFIED",
+    "NFCORE_RNASEQ:RNASEQ:DESEQ2_QC_BAM_SALMON",
+    "NFCORE_RNASEQ:RNASEQ:DESEQ2_QC_PSEUDO",
+    "NFCORE_RNASEQ:RNASEQ:MULTIQC_RNASEQ:MULTIQC"
+  ],
+  "feasible": true,
+  "problems": "",
+  "rationale": "Setting salmon_quant_libtype to A overrides the metadata-derived library type with --libType=A in both BAM-based and FASTQ-based Salmon quantification, without changing process activation or sample strandedness metadata. Both quantification processes and their downstream transcript-to-gene mapping, count import, SummarizedExperiment construction, DESeq2 quality control and MultiQC reporting are affected through regenerated inputs. The separate Salmon process used for upstream strandedness inference retains its existing configuration and is unaffected; this prediction is based on static analysis of the supplied source code rather than an actual pipeline execution."
+}

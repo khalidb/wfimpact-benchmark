@@ -1,0 +1,21 @@
+{
+  "changed_parameters": [{"name": "pseudo_aligner", "value": "kallisto"}],
+  "added": [
+    "NFCORE_RNASEQ:PREPARE_GENOME_INDICES:KALLISTO_INDEX",
+    "NFCORE_RNASEQ:RNASEQ:QUANTIFY_PSEUDO_ALIGNMENT:KALLISTO_QUANT"
+  ],
+  "removed": [
+    "NFCORE_RNASEQ:RNASEQ:QUANTIFY_PSEUDO_ALIGNMENT:SALMON_QUANT"
+  ],
+  "affected": [
+    "NFCORE_RNASEQ:RNASEQ:QUANTIFY_PSEUDO_ALIGNMENT:QUANT_TXIMPORT_SUMMARIZEDEXPERIMENT:CUSTOM_TX2GENE",
+    "NFCORE_RNASEQ:RNASEQ:QUANTIFY_PSEUDO_ALIGNMENT:QUANT_TXIMPORT_SUMMARIZEDEXPERIMENT:TXIMETA_TXIMPORT",
+    "NFCORE_RNASEQ:RNASEQ:QUANTIFY_PSEUDO_ALIGNMENT:QUANT_TXIMPORT_SUMMARIZEDEXPERIMENT:SE_GENE_UNIFIED",
+    "NFCORE_RNASEQ:RNASEQ:QUANTIFY_PSEUDO_ALIGNMENT:QUANT_TXIMPORT_SUMMARIZEDEXPERIMENT:SE_TRANSCRIPT_UNIFIED",
+    "NFCORE_RNASEQ:RNASEQ:DESEQ2_QC_PSEUDO",
+    "NFCORE_RNASEQ:RNASEQ:MULTIQC_RNASEQ:MULTIQC"
+  ],
+  "feasible": false,
+  "problems": "The test profile sets both --transcript_fasta and --additional_fasta. validateInputParameters() raises transcriptFastaAdditionalFastaError() when both are given and the selected pseudo-aligner has no pre-built index. The baseline only passes this check because --salmon_index is supplied. With --pseudo_aligner kallisto and no --kallisto_index, needs_to_build_index becomes true and the pipeline errors out during PIPELINE_INITIALISATION, before any process runs. To make the change work, supply a --kallisto_index that already contains the GFP spike-in, or drop --transcript_fasta (or --additional_fasta).",
+  "rationale": "Switching pseudo_aligner to kallisto would build a Kallisto index from the transcript FASTA, run KALLISTO_QUANT instead of SALMON_QUANT, and re-run the downstream tximport, SummarizedExperiment, DESeq2 pseudo QC and MultiQC steps with kallisto inputs and prefixes. The STAR/Salmon alignment path and Salmon-based strandedness inference would be unchanged, since UNTAR_SALMON_INDEX still runs because salmon_index is set. In the test profile, however, the run would fail at parameter validation, so the lists above describe what would change only if the conflict is resolved."
+}

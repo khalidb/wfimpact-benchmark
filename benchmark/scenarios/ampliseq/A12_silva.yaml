@@ -1,0 +1,2 @@
+# A12: SILVA 138 instead of GTDB as DADA2 reference (reference data)
+dada_ref_taxonomy: "silva=138"

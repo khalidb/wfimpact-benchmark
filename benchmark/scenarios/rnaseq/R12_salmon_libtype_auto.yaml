@@ -1,0 +1,2 @@
+# R12: let Salmon infer the library type from the reads (analysis setting)
+salmon_quant_libtype: "A"

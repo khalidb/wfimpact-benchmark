@@ -1,0 +1,2 @@
+# R1: Our machine has little memory, use HISAT2 rather than STAR
+aligner: hisat2

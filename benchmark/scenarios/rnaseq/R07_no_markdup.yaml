@@ -1,0 +1,2 @@
+# R7: Do not mark duplicates
+skip_markduplicates: true

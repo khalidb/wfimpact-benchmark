@@ -1,0 +1,15 @@
+{
+ "A01_pooled": "Many of our taxa are rare and spread thinly across samples. Please let the denoising use the information from all samples together.",
+ "A02a_rarefaction_1000": "For the diversity analyses, please rarefy to at least 1,000 reads per sample.",
+ "A02b_rarefaction_600": "For the diversity analyses, please rarefy to at least 600 reads per sample, even if the shallowest samples have to be left out.",
+ "A03_no_qiime": "We cannot use QIIME2 on our infrastructure.",
+ "A04_exclude_archaea": "We are only interested in bacteria. Please also remove archaeal ASVs, in addition to mitochondria and chloroplasts.",
+ "A05_min_frequency_5": "Please keep rarer ASVs: only remove those with fewer than five reads in total.",
+ "A06_truncation": "Please truncate forward reads at 230 bases and reverse reads at 180 bases.",
+ "A07_no_diff_abundance": "I am in a hurry and do not need any differential abundance testing.",
+ "A08_no_decontam": "We did not sequence any negative controls in this run.",
+ "A09a_skip_quality": "We have already checked read quality ourselves, so please skip the DADA2 quality profiling.",
+ "A10_kraken2": "Please assign taxonomy with Kraken2 and the Greengenes database instead of DADA2.",
+ "A11_picrust": "We would also like an estimate of the metabolic functions that our communities may carry.",
+ "A12_silva": "Our group reports taxonomy against SILVA 138 rather than GTDB. Please classify the sequences with that reference."
+}

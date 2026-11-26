@@ -1,0 +1,9 @@
+{
+  "changed_parameters": [{"name": "skip_dada_quality", "value": "true"}],
+  "added": [],
+  "removed": [],
+  "affected": [],
+  "feasible": false,
+  "problems": "validateInputParameters() in subworkflows/local/utils_nfcore_ampliseq_pipeline/main.nf stops the run with an error when `--skip_dada_quality` is set and either `--trunclenf` or `--trunclenr` is null: \"Incompatible parameters: `--skip_dada_quality` may not be used without setting `--trunclenf` and `--trunclenr`.\" The baseline test profile sets neither, so the pipeline aborts at initialisation and no process runs. The reason for this check is that the baseline picks truncation lengths automatically: TRUNCLEN reads the DADA2_QUALITY1 quality-stats table, and that table no longer exists once quality profiling is skipped. To skip profiling, the researcher must also choose explicit `--trunclenf`/`--trunclenr` values. Doing so would change DADA2 filtering and every downstream result.",
+  "rationale": "Skipping DADA2 quality profiling maps to `--skip_dada_quality true`. With the baseline configuration this is rejected during parameter validation, because no explicit truncation lengths are set and the automatic truncation (TRUNCLEN) depends on the DADA2_QUALITY1 output. The run fails before any task executes, so no process changes are listed."
+}

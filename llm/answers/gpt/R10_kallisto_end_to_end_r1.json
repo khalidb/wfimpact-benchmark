@@ -1,0 +1,26 @@
+{
+  "changed_parameters": [
+    {
+      "name": "pseudo_aligner",
+      "value": "kallisto"
+    }
+  ],
+  "added": [
+    "NFCORE_RNASEQ:PREPARE_GENOME_INDICES:KALLISTO_INDEX",
+    "NFCORE_RNASEQ:RNASEQ:QUANTIFY_PSEUDO_ALIGNMENT:KALLISTO_QUANT"
+  ],
+  "removed": [
+    "NFCORE_RNASEQ:RNASEQ:QUANTIFY_PSEUDO_ALIGNMENT:SALMON_QUANT"
+  ],
+  "affected": [
+    "NFCORE_RNASEQ:RNASEQ:QUANTIFY_PSEUDO_ALIGNMENT:QUANT_TXIMPORT_SUMMARIZEDEXPERIMENT:CUSTOM_TX2GENE",
+    "NFCORE_RNASEQ:RNASEQ:QUANTIFY_PSEUDO_ALIGNMENT:QUANT_TXIMPORT_SUMMARIZEDEXPERIMENT:TXIMETA_TXIMPORT",
+    "NFCORE_RNASEQ:RNASEQ:QUANTIFY_PSEUDO_ALIGNMENT:QUANT_TXIMPORT_SUMMARIZEDEXPERIMENT:SE_GENE_UNIFIED",
+    "NFCORE_RNASEQ:RNASEQ:QUANTIFY_PSEUDO_ALIGNMENT:QUANT_TXIMPORT_SUMMARIZEDEXPERIMENT:SE_TRANSCRIPT_UNIFIED",
+    "NFCORE_RNASEQ:RNASEQ:DESEQ2_QC_PSEUDO",
+    "NFCORE_RNASEQ:RNASEQ:MULTIQC_RNASEQ:MULTIQC"
+  ],
+  "feasible": true,
+  "problems": "",
+  "rationale": "Changing pseudo_aligner to kallisto triggers Kallisto index construction using the transcript FASTA supplied by the test profile and replaces Salmon with Kallisto specifically in the pseudo-alignment quantification branch. The resulting quantification outputs affect transcript-to-gene mapping, quantification import, both SummarizedExperiment processes, downstream DESeq2 quality control and MultiQC reporting. The existing Salmon index extraction, Salmon-based strandedness inference and STAR-based alignment with Salmon quantification remain unchanged; this prediction is based on static analysis of the supplied source code rather than an actual execution."
+}

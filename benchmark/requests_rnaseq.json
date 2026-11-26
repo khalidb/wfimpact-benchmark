@@ -1,0 +1,15 @@
+{
+ "R01_hisat2": "Our machine has little memory. Please use HISAT2 rather than STAR for the alignment.",
+ "R02_rsem": "We would like the gene quantification to be done with RSEM.",
+ "R03_fastp": "Please use fastp for adapter and quality trimming.",
+ "R04_no_trimming": "Our reads have already been trimmed by the sequencing facility, so there is no need to trim them again.",
+ "R05_ribo_removal": "Our libraries contain a lot of ribosomal RNA. Please remove the rRNA reads before alignment.",
+ "R06_umi": "Our libraries contain unique molecular identifiers (UMIs), with the barcode in the first four bases of each read. Please take them into account.",
+ "R07_no_markdup": "We do not want duplicate reads to be marked.",
+ "R08_no_spikein": "We did not add the GFP spike-in to our samples, so please do not include it in the reference.",
+ "R09_gencode": "Our annotation file comes from GENCODE.",
+ "R10_kallisto": "We would prefer Kallisto rather than Salmon for the pseudo-alignment quantification.",
+ "R11_no_qc": "We are short of time. Please skip the quality control steps.",
+ "R12_salmon_libtype_auto": "We are unsure about the strandedness recorded for our samples. Please have the quantification infer the library type from the reads themselves instead.",
+ "R13_trim_quality_30": "Please trim low-quality bases more stringently, with a Phred quality cut-off of 30 in Trim Galore."
+}

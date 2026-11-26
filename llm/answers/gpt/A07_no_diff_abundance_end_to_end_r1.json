@@ -1,0 +1,39 @@
+{
+  "changed_parameters": [
+    {
+      "name": "ancombc",
+      "value": false
+    },
+    {
+      "name": "ancombc_formula",
+      "value": null
+    },
+    {
+      "name": "ancombc2",
+      "value": false
+    },
+    {
+      "name": "ancombc2_formula",
+      "value": null
+    }
+  ],
+  "added": [],
+  "removed": [
+    "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:ANCOMBC2_FORMULA_ASV",
+    "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:ANCOMBC2_FORMULA_TAX",
+    "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:ANCOMBC_FORMULA_ASV",
+    "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:ANCOMBC_FORMULA_TAX",
+    "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:QIIME2_ANCOMBC2_ASV",
+    "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:QIIME2_ANCOMBC2_TAX",
+    "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:QIIME2_ANCOMBC_ASV",
+    "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:QIIME2_ANCOMBC_TAX",
+    "NFCORE_AMPLISEQ:AMPLISEQ:QIIME2_ANCOM:QIIME2_FILTERSAMPLES_ANCOM"
+  ],
+  "affected": [
+    "NFCORE_AMPLISEQ:AMPLISEQ:MULTIQC",
+    "NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT"
+  ],
+  "feasible": true,
+  "problems": "",
+  "rationale": "Disabling both ANCOMBC variants and clearing their independently evaluated formula parameters prevents the entire QIIME2_ANCOM subworkflow from being invoked, since standard ANCOM is already disabled in the baseline. MULTIQC is affected by the changed parameter summary, and SUMMARY_REPORT receives empty differential abundance result inputs instead of the baseline ANCOMBC and ANCOMBC2 outputs. Metadata processing remains necessary for diversity analysis, so METADATA_ALL, METADATA_PAIRWISE and the diversity analysis processes are unaffected."
+}

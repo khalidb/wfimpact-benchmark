@@ -1,0 +1,2 @@
+# R6: Our samples have UMIs (barcode pattern NNNN is already set by the test profile)
+with_umi: true

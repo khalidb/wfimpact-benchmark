@@ -1,0 +1,12 @@
+Web-interface runs for the RCIS 2027 evaluation (end_to_end task, prompts with the feasible/problems field)
+
+claude:  Claude Opus 5.5, effort "medium", claude.ai, new incognito conversation per run, web search off.
+         Temperature not exposed in the web interface (provider default).
+         Bundle-reading check 22 Nov 2026: ampliseq code_bundle.txt (sha256 599e35d8...00782), last five lines quoted exactly.
+chatgpt: rnaseq r1 answers from 18-20 Nov 2026 (prompts without the feasible field, R02 and R11 with bundle v2).
+         Model and settings to record.
+
+chatgpt: GPT-6.2, reasoning effort "medium", ChatGPT web interface, non-personalised Temporary Chat per run,
+         web search off. Runs on 26 Nov 2026, all 26 prompts (current prompt with the feasible/problems field).
+         Old answers obtained with the earlier prompt moved to chatgpt_oldprompt/.
+         Bundle-reading check 26 Nov 2026: ampliseq code_bundle.txt (sha256 599e35d8...), last lines quoted correctly (indentation not preserved in the paste). rnaseq code_bundle_v2.txt: content of the final lines (RIBODETECTOR rule closing conf/test.config) reproduced, line breaks collapsed.

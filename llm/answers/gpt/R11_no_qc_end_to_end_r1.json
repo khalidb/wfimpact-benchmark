@@ -1,0 +1,33 @@
+{
+  "changed_parameters": [
+    {
+      "name": "skip_qc",
+      "value": "true"
+    }
+  ],
+  "added": [],
+  "removed": [
+    "NFCORE_RNASEQ:RNASEQ:BAM_QC_RNASEQ:BAM_RSEQC:RSEQC_BAMSTAT",
+    "NFCORE_RNASEQ:RNASEQ:BAM_QC_RNASEQ:BAM_RSEQC:RSEQC_INFEREXPERIMENT",
+    "NFCORE_RNASEQ:RNASEQ:BAM_QC_RNASEQ:BAM_RSEQC:RSEQC_INNERDISTANCE",
+    "NFCORE_RNASEQ:RNASEQ:BAM_QC_RNASEQ:BAM_RSEQC:RSEQC_JUNCTIONANNOTATION",
+    "NFCORE_RNASEQ:RNASEQ:BAM_QC_RNASEQ:BAM_RSEQC:RSEQC_JUNCTIONSATURATION",
+    "NFCORE_RNASEQ:RNASEQ:BAM_QC_RNASEQ:BAM_RSEQC:RSEQC_READDISTRIBUTION",
+    "NFCORE_RNASEQ:RNASEQ:BAM_QC_RNASEQ:BAM_RSEQC:RSEQC_READDUPLICATION",
+    "NFCORE_RNASEQ:RNASEQ:BAM_QC_RNASEQ:CUSTOM_MULTIQCCUSTOMBIOTYPE",
+    "NFCORE_RNASEQ:RNASEQ:BAM_QC_RNASEQ:DUPRADAR",
+    "NFCORE_RNASEQ:RNASEQ:BAM_QC_RNASEQ:QUALIMAP_RNASEQ",
+    "NFCORE_RNASEQ:RNASEQ:BAM_QC_RNASEQ:SAMTOOLS_SORT_QUALIMAP",
+    "NFCORE_RNASEQ:RNASEQ:BAM_QC_RNASEQ:SUBREAD_FEATURECOUNTS",
+    "NFCORE_RNASEQ:RNASEQ:DESEQ2_QC_BAM_SALMON",
+    "NFCORE_RNASEQ:RNASEQ:DESEQ2_QC_PSEUDO",
+    "NFCORE_RNASEQ:RNASEQ:FASTQ_QC_TRIM_FILTER_SETSTRANDEDNESS:FASTQC_FILTERED",
+    "NFCORE_RNASEQ:RNASEQ:FASTQ_QC_TRIM_FILTER_SETSTRANDEDNESS:FASTQ_FASTQC_UMITOOLS_TRIMGALORE:FASTQC"
+  ],
+  "affected": [
+    "NFCORE_RNASEQ:RNASEQ:MULTIQC_RNASEQ:MULTIQC"
+  ],
+  "feasible": true,
+  "problems": "",
+  "rationale": "Setting skip_qc to true disables standalone FastQC processes, the BAM_QC_RNASEQ subworkflow and DESeq2 quality control, while retaining trimming, FASTQ linting, strandedness inference, alignment and quantification. MultiQC remains enabled because skip_multiqc is an independent parameter, but its inputs change owing to the absence of the skipped QC outputs. This prediction interprets the request according to the pipeline's global skip_qc parameter rather than disabling every operation associated with quality assessment or reporting."
+}

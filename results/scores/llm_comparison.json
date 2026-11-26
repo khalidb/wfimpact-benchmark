@@ -1,0 +1,301 @@
+[
+ [
+  "A01_pooled",
+  {
+   "chatgpt": [
+    0.98,
+    1.0
+   ],
+   "claude": [
+    1.0,
+    1.0
+   ]
+  }
+ ],
+ [
+  "A02b_rarefaction_600",
+  {
+   "chatgpt": [
+    1.0,
+    1.0
+   ],
+   "claude": [
+    1.0,
+    1.0
+   ]
+  }
+ ],
+ [
+  "A03_no_qiime",
+  {
+   "chatgpt": [
+    1.0,
+    0.98
+   ],
+   "claude": [
+    1.0,
+    0.98
+   ]
+  }
+ ],
+ [
+  "A04_exclude_archaea",
+  {
+   "chatgpt": [
+    1.0,
+    1.0
+   ],
+   "claude": [
+    1.0,
+    1.0
+   ]
+  }
+ ],
+ [
+  "A05_min_frequency_5",
+  {
+   "chatgpt": [
+    1.0,
+    1.0
+   ],
+   "claude": [
+    1.0,
+    1.0
+   ]
+  }
+ ],
+ [
+  "A06_truncation",
+  {
+   "chatgpt": [
+    0.98,
+    0.99
+   ],
+   "claude": [
+    0.99,
+    1.0
+   ]
+  }
+ ],
+ [
+  "A07_no_diff_abundance",
+  {
+   "chatgpt": [
+    1.0,
+    1.0
+   ],
+   "claude": [
+    1.0,
+    1.0
+   ]
+  }
+ ],
+ [
+  "A08_no_decontam",
+  {
+   "chatgpt": [
+    1.0,
+    1.0
+   ],
+   "claude": [
+    0.98,
+    1.0
+   ]
+  }
+ ],
+ [
+  "A10_kraken2",
+  {
+   "chatgpt": [
+    1.0,
+    1.0
+   ],
+   "claude": [
+    1.0,
+    1.0
+   ]
+  }
+ ],
+ [
+  "A11_picrust",
+  {
+   "chatgpt": [
+    1.0,
+    1.0
+   ],
+   "claude": [
+    1.0,
+    1.0
+   ]
+  }
+ ],
+ [
+  "A12_silva",
+  {
+   "chatgpt": [
+    0.93,
+    0.99
+   ],
+   "claude": [
+    1.0,
+    1.0
+   ]
+  }
+ ],
+ [
+  "R01_hisat2",
+  {
+   "chatgpt": [
+    1.0,
+    1.0
+   ],
+   "claude": [
+    1.0,
+    1.0
+   ]
+  }
+ ],
+ [
+  "R02_rsem",
+  {
+   "chatgpt": [
+    0.94,
+    0.94
+   ],
+   "claude": [
+    1.0,
+    1.0
+   ]
+  }
+ ],
+ [
+  "R03_fastp",
+  {
+   "chatgpt": [
+    1.0,
+    1.0
+   ],
+   "claude": [
+    1.0,
+    1.0
+   ]
+  }
+ ],
+ [
+  "R04_no_trimming",
+  {
+   "chatgpt": [
+    0.98,
+    1.0
+   ],
+   "claude": [
+    1.0,
+    1.0
+   ]
+  }
+ ],
+ [
+  "R05_ribo_removal",
+  {
+   "chatgpt": [
+    0.98,
+    1.0
+   ],
+   "claude": [
+    1.0,
+    1.0
+   ]
+  }
+ ],
+ [
+  "R06_umi",
+  {
+   "chatgpt": [
+    0.99,
+    1.0
+   ],
+   "claude": [
+    1.0,
+    1.0
+   ]
+  }
+ ],
+ [
+  "R07_no_markdup",
+  {
+   "chatgpt": [
+    1.0,
+    1.0
+   ],
+   "claude": [
+    1.0,
+    1.0
+   ]
+  }
+ ],
+ [
+  "R08_no_spikein",
+  {
+   "chatgpt": [
+    1.0,
+    1.0
+   ],
+   "claude": [
+    1.0,
+    1.0
+   ]
+  }
+ ],
+ [
+  "R09_gencode",
+  {
+   "chatgpt": [
+    0.95,
+    1.0
+   ],
+   "claude": [
+    1.0,
+    1.0
+   ]
+  }
+ ],
+ [
+  "R11_no_qc",
+  {
+   "chatgpt": [
+    1.0,
+    1.0
+   ],
+   "claude": [
+    1.0,
+    1.0
+   ]
+  }
+ ],
+ [
+  "R12_salmon_libtype_auto",
+  {
+   "chatgpt": [
+    1.0,
+    1.0
+   ],
+   "claude": [
+    1.0,
+    1.0
+   ]
+  }
+ ],
+ [
+  "R13_trim_quality_30",
+  {
+   "chatgpt": [
+    0.98,
+    1.0
+   ],
+   "claude": [
+    1.0,
+    1.0
+   ]
+  }
+ ]
+]
